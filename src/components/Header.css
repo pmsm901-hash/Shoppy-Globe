@@ -1,0 +1,106 @@
+/* Header */
+.header {
+  background: #1e3a8a;
+  color: white;
+  padding: 15px 40px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo */
+.logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* Navigation */
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: gold;
+}
+
+/* Hamburger */
+.menu-icon {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Tablet */
+@media (max-width:768px) {
+
+  .header{
+    padding:15px 20px;
+  }
+
+  .menu-icon{
+    display:block;
+  }
+
+  .nav-links{
+    display:none;
+
+    position:absolute;
+    top:70px;
+    left:0;
+
+    width:100%;
+
+    background:#1e3a8a;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    gap:20px;
+
+    padding:20px 0;
+  }
+
+  .nav-links.active{
+    display:flex;
+  }
+
+  .logo a{
+    font-size:22px;
+  }
+
+}
+
+/* Mobile */
+
+@media (max-width:480px){
+
+.logo a{
+    font-size:20px;
+}
+
+.nav-links a{
+    font-size:17px;
+}
+
+.menu-icon{
+    font-size:28px;
+}
+
+}
