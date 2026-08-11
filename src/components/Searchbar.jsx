@@ -1,8 +1,18 @@
-function Searchbar({search,setSearch})
+import { setSearch } from "../redux/productSlice";
+import { selectSearch } from "../redux/productSelectors";
+import { useDispatch, useSelector } from "react-redux";
+function Searchbar()
 {
+    const dispatch=useDispatch();
+    const search=useSelector(selectSearch);
+    function handleSearch(e)
+    {
+        dispatch(setSearch(e.target.value));
+    }
+
     return(
-    <div className="search-box">
-        <input type="text" placeholder="Search Products....." value={search} onChange={(e)=>setSearch(e.target.value)}></input>
+    <div className="search-container">
+        <input type="text" className="search-input" placeholder="Search Products....." value={search} onChange={handleSearch}/>
     </div>);
 }
 export default Searchbar;
