@@ -5,7 +5,7 @@ import { addItem } from "../redux/cartSlice";
 function ProductCard({ product }) {
   const dispatch=useDispatch();
   function handleAddToCart(){
-    dispatch(addItemem(product))
+    dispatch(addItem(product))
   }
   return (
     <div className="card">

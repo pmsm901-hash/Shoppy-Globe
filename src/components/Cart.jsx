@@ -34,6 +34,9 @@ function Cart() {
     <div className="cart-page">
 
       <h1 className="cart-title">🛒 Shopping Cart</h1>
+          <Link to="/products" className="back-products-btn">
+      ← Continue Shopping
+    </Link>
 
       <div className="cart-layout">
 

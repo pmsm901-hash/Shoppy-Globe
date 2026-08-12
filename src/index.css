@@ -144,6 +144,7 @@ a {
 
 .card {
   width: 260px;
+  margin: 10px 40px;
   background: white;
   border-radius: 10px;
   overflow: hidden;
@@ -331,6 +332,41 @@ a {
   background: #16317a;
   transform: translateY(-2px);
 }
+.product-btn {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+.add-cart-btn-details {
+  padding: 12px 18px;
+  margin-top: 20px;
+
+  background: gold;
+  color: black;
+
+  border: none;
+  border-radius: 8px;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+  gap: 10px;
+}
+
+.add-cart-btn-details:hover {
+  background: yellow;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(240, 228, 2, 0.889);
+}
+
+.add-cart-btn-details:active {
+  transform: scale(0.97);
+}
+
 
 /* ==============================
    LOADING
@@ -475,35 +511,6 @@ a {
    SEARCH BAR
 ========================= */
 
-.search-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 25px auto;
-  width: 100%;
-  background-color: #fff;
-}
-
-.search-input {
-  width: 1000px;
-  max-width: 90%;
-  padding: 13px 18px;
-  border: 2px solid #ddd;
-  border-radius: 25px;
-  outline: none;
-  font-size: 16px;
-  transition: 0.3s;
-  background: white;
-}
-
-.search-input:focus {
-  border-color: #1e3a8a;
-  box-shadow: 0 0 8px rgba(30, 58, 138, 0.25);
-}
-
-.search-input::placeholder {
-  color: #999;
-}
 
 /* =========================
    ADD TO CART BUTTON
@@ -943,6 +950,10 @@ a {
     width: 94%;
     margin: 25px auto;
   }
+  ..card-body{
+    width:94%;
+    margin:25px auto;
+  }
 
   .cart-title {
     font-size: 26px;
@@ -1012,4 +1023,42 @@ a {
   to {
     transform: rotate(360deg);
   }
+}
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .product-btn {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .add-cart-btn-details,
+    .product-btn .btn-back {
+        width: 100%;
+        text-align: center;
+    }
+}
+.back-products-btn {
+    display: inline-block;
+    margin: 10px 0 25px;
+    padding: 11px 20px;
+    background: #1e3a8a;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.back-products-btn:hover {
+    background: #2563eb;
+    transform: translateX(-3px);
+}
+@media (max-width: 600px) {
+    .back-products-btn {
+        display: block;
+        width: fit-content;
+        margin: 10px auto 20px;
+        font-size: 14px;
+    }
 }

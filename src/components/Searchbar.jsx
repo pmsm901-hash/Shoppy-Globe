@@ -1,6 +1,7 @@
 import { setSearch } from "../redux/productSlice";
 import { selectSearch } from "../redux/productSelectors";
 import { useDispatch, useSelector } from "react-redux";
+import "./Searchbar.css";
 function Searchbar()
 {
     const dispatch=useDispatch();
