@@ -144,7 +144,7 @@ a {
 
 .card {
   width: 260px;
-  margin: 10px 40px;
+  margin: 0px 40px;
   background: white;
   border-radius: 10px;
   overflow: hidden;
@@ -950,10 +950,7 @@ a {
     width: 94%;
     margin: 25px auto;
   }
-  ..card-body{
-    width:94%;
-    margin:25px auto;
-  }
+  
 
   .cart-title {
     font-size: 26px;

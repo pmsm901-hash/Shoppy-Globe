@@ -1,156 +1,119 @@
-import { useDispatch, useSelector } from "react-redux";
-import {
-  decreaseQuantity,
-  increaseQuantity,
-  removeItem
-} from "../redux/cartSlice";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import CartItem from "./CartItem";
 
 function Cart() {
 
-  const dispatch = useDispatch();
-
-  const cartItems = useSelector(
-    (state) => state.cart.items
-  );
-
-  // Calculate total price
-  const grandTotal = cartItems.reduce(
-    (total, item) => total + item.price * item.quantity,
-    0
-  );
-
-  if (cartItems.length === 0) {
-    return (
-      <div className="empty-cart">
-        <div className="empty-cart-icon">🛒</div>
-        <h2>Your Cart is Empty</h2>
-        <p>Add some products to your cart and they will appear here.</p>
-      </div>
+    const cartItems = useSelector(
+        (state) => state.cart.items
     );
-  }
 
-  return (
-    <div className="cart-page">
+    const grandTotal = cartItems.reduce(
+        (total, item) =>
+            total + item.price * item.quantity,
+        0
+    );
 
-      <h1 className="cart-title">🛒 Shopping Cart</h1>
-          <Link to="/products" className="back-products-btn">
-      ← Continue Shopping
-    </Link>
+    if (cartItems.length === 0) {
+        return (
+            <div className="empty-cart">
 
-      <div className="cart-layout">
+                <div className="empty-cart-icon">
+                    🛒
+                </div>
 
-        {/* Cart Items */}
-        <div className="cart-items">
+                <h2>Your Cart is Empty</h2>
 
-          {cartItems.map((item) => (
-
-            <div className="cart-item" key={item.id}>
-
-              <div className="cart-image">
-                <img
-                  src={item.thumbnail}
-                  alt={item.title}
-                />
-              </div>
-
-              <div className="cart-info">
-
-                <h2>{item.title}</h2>
-
-                <p className="cart-price">
-                  ₹ {item.price}
+                <p>
+                    Add some products to your cart
+                    and they will appear here.
                 </p>
 
-                <div className="quantity-control">
+                <Link
+                    to="/products"
+                    className="back-products-btn"
+                >
+                    ← Continue Shopping
+                </Link>
 
-                  <button
-                    onClick={() =>
-                      dispatch(decreaseQuantity(item.id))
-                    }
-                  >
-                    −
-                  </button>
+            </div>
+        );
+    }
 
-                  <span>{item.quantity}</span>
+    return (
+        <div className="cart-page">
 
-                  <button
-                    onClick={() =>
-                      dispatch(increaseQuantity(item.id))
-                    }
-                  >
-                    +
-                  </button>
+            <h1 className="cart-title">
+                🛒 Shopping Cart
+            </h1>
+
+            <Link
+                to="/products"
+                className="back-products-btn"
+            >
+                ← Continue Shopping
+            </Link>
+
+            <div className="cart-layout">
+
+                {/* Cart Items */}
+                <div className="cart-items">
+
+                    {cartItems.map((item) => (
+                        <CartItem
+                            key={item.id}
+                            item={item}
+                        />
+                    ))}
 
                 </div>
 
-                <p className="item-total">
-                  Item Total:
-                  <strong>
-                    ₹ {(item.price * item.quantity).toFixed(2)}
-                  </strong>
-                </p>
+                {/* Cart Summary */}
+                <div className="cart-summary">
 
-                <button
-                  className="remove-btn"
-                  onClick={() =>
-                    dispatch(removeItem(item.id))
-                  }
-                >
-                  🗑 Remove
-                </button>
+                    <h2>Order Summary</h2>
 
-              </div>
+                    <div className="summary-row">
+                        <span>Products</span>
+                        <span>{cartItems.length}</span>
+                    </div>
+
+                    <div className="summary-row">
+                        <span>Subtotal</span>
+                        <span>
+                            ₹ {grandTotal.toFixed(2)}
+                        </span>
+                    </div>
+
+                    <div className="summary-row">
+                        <span>Delivery</span>
+                        <span className="free">
+                            FREE
+                        </span>
+                    </div>
+
+                    <hr />
+
+                    <div className="summary-total">
+                        <span>Total</span>
+
+                        <strong>
+                            ₹ {grandTotal.toFixed(2)}
+                        </strong>
+                    </div>
+
+                    <Link to="/checkout">
+                        <button className="checkout-btn">
+                            Proceed to Checkout
+                        </button>
+                    </Link>
+
+                </div>
 
             </div>
 
-          ))}
-
         </div>
-
-        {/* Cart Summary */}
-        <div className="cart-summary">
-
-          <h2>Order Summary</h2>
-
-          <div className="summary-row">
-            <span>Products</span>
-            <span>{cartItems.length}</span>
-          </div>
-
-          <div className="summary-row">
-            <span>Subtotal</span>
-            <span>
-              ₹ {grandTotal.toFixed(2)}
-            </span>
-          </div>
-
-          <div className="summary-row">
-            <span>Delivery</span>
-            <span className="free">FREE</span>
-          </div>
-
-          <hr />
-
-          <div className="summary-total">
-            <span>Total</span>
-            <strong>
-              ₹ {grandTotal.toFixed(2)}
-            </strong>
-          </div>
-          <Link to="/checkout">
-          <button className="checkout-btn">
-            Proceed to Checkout
-          </button>
-          </Link>
-          
-
-        </div>
-
-      </div>
-
-    </div>
-  );
+    );
 }
 
 export default Cart;
