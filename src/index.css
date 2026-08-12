@@ -85,7 +85,7 @@ a {
 }
 
 .footer {
-  background: #1e293b;
+  background: #1e3a8a;
   color: #fff;
   padding: 40px 20px;
   text-align: center;
@@ -100,7 +100,7 @@ a {
 
 .footer p {
   font-size: 16px;
-  color: #d1d5db;
+  color: #fff;
   margin: 10px 0;
 }
 
@@ -122,7 +122,7 @@ a {
 }
 
 .footer-links a:hover {
-  color: #38bdf8;
+  color: #fff;
   transform: translateY(-2px);
 }
 
