@@ -1,0 +1,226 @@
+/* ==============================
+   404 PAGE
+============================== */
+
+.not-found {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+    box-sizing: border-box;
+
+    background: linear-gradient(
+        135deg,
+        #eff6ff,
+        #dbeafe,
+        #f8fafc
+    );
+}
+
+
+/* ==============================
+   404 CARD
+============================== */
+
+.not-found-card {
+    width: 100%;
+    max-width: 650px;
+
+    padding: 45px 35px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ==============================
+   ERROR CODE
+============================== */
+
+.error-code {
+    font-size: 100px;
+
+    font-weight: 900;
+
+    line-height: 1;
+
+    color: #1e3a8a;
+
+    margin-bottom: 10px;
+}
+
+
+/* ==============================
+   ICON
+============================== */
+
+.error-icon {
+    font-size: 45px;
+
+    margin: 10px 0;
+}
+
+
+/* ==============================
+   HEADING
+============================== */
+
+.not-found-card h1 {
+    font-size: 32px;
+
+    color: #222;
+
+    margin: 15px 0;
+}
+
+
+/* ==============================
+   MESSAGE
+============================== */
+
+.error-message {
+    color: #666;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+
+    margin-bottom: 25px;
+}
+
+
+/* ==============================
+   ERROR DETAILS
+============================== */
+
+.error-details {
+    background: #f8fafc;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 10px;
+
+    padding: 15px;
+
+    margin: 20px 0 30px;
+
+    text-align: left;
+}
+
+.error-details p {
+    margin: 8px 0;
+
+    color: #555;
+
+    font-size: 14px;
+}
+
+.error-details strong {
+    color: #1e3a8a;
+}
+
+
+/* Requested URL */
+
+.requested-url {
+    display: block;
+
+    margin-top: 5px;
+
+    padding: 8px 10px;
+
+    background: #fee2e2;
+
+    color: #dc2626;
+
+    border-radius: 6px;
+
+    word-break: break-all;
+
+    font-family: monospace;
+}
+
+
+/* ==============================
+   HOME BUTTON
+============================== */
+
+.home-btn {
+    display: inline-block;
+
+    padding: 13px 25px;
+
+    background: #1e3a8a;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    transition: all 0.3s ease;
+}
+
+.home-btn:hover {
+    background: #2563eb;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 15px rgba(30, 58, 138, 0.25);
+}
+
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media (max-width: 600px) {
+
+    .not-found {
+        padding: 20px;
+    }
+
+    .not-found-card {
+        padding: 35px 20px;
+    }
+
+    .error-code {
+        font-size: 75px;
+    }
+
+    .error-icon {
+        font-size: 35px;
+    }
+
+    .not-found-card h1 {
+        font-size: 26px;
+    }
+
+    .error-message {
+        font-size: 15px;
+    }
+
+    .error-details {
+        text-align: left;
+    }
+
+    .home-btn {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
