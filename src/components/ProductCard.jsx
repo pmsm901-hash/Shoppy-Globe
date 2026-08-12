@@ -9,7 +9,7 @@ function ProductCard({ product }) {
   }
   return (
     <div className="card">
-      <img src={product.thumbnail} alt={product.title} />
+      <img src={product.thumbnail} alt={product.title} loading="lazy"/>
 
       <div className="card-body">
         <h3>{product.title}</h3>

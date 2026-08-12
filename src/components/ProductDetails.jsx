@@ -24,7 +24,7 @@ function ProductDetails() {
 
   return (
     <div className="details-card">
-      <img src={product.thumbnail} alt={product.title} />
+      <img src={product.thumbnail} alt={product.title} loading="lazy" />
 
       <div className="details-content">
         <h1>{product.title}</h1>
