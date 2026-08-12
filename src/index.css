@@ -8,6 +8,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background: #f4f9f4;
   color: #333;
+  padding:px 0%;
 }
 
 a {
@@ -1058,4 +1059,90 @@ a {
         margin: 10px auto 20px;
         font-size: 14px;
     }
+}
+@media (max-width: 768px) {
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 35px 20px;
+    gap: 30px;
+  }
+
+  .hero-content {
+    width: 85%;
+  }
+
+  .hero-content h1 {
+    font-size: 32px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+  }
+
+  .hero-content p {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  .hero-features {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .hero-features span {
+    font-size: 13px;
+    padding: 6px 8px;
+  }
+
+  .hero-btn {
+    font-size: 15px;
+    padding: 11px 22px;
+  }
+
+  .hero-image {
+    width: 80%;
+  }
+
+  .hero-image img {
+    width: 80%;
+    max-width: 100%;
+    border-radius: 12px;
+  }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  .hero {
+    padding: 25px 15px;
+    gap: 25px;
+  }
+
+  .hero-content h1 {
+    font-size: 26px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+
+  .hero-features {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .hero-features span {
+    font-size: 13px;
+  }
+
+  .hero-btn {
+    width: 100%;
+    max-width: 200px;
+  }
 }

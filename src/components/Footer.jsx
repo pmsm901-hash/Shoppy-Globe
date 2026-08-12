@@ -6,11 +6,11 @@ function Footer() {
 
       <p>Your One Stop Shopping Destination.</p>
 
-      <div className="footer-links">
+      {/* <div className="footer-links">
         <a href="#">About</a>
         <a href="#">Contact</a>
         <a href="#">Privacy Policy</a>
-      </div>
+      </div> */}
 
       <p>
         © 2026 Shoppy Globe. All Rights Reserved.
