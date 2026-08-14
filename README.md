@@ -27,6 +27,9 @@ Shoppy Globe is a responsive e-commerce web application built using React.js. It
     - CSS
     - DummyJSON API
 
+# Install the Project
+    npm install
+
 # Run the Project
     npm run dev
 
